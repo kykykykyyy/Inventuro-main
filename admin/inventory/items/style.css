@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: #fafbfe;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e5e5;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #224d7a;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #1d436c;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #224d7a;
+    display: block;
+    font-size: 1rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.3rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: #1d3854;
+    color: white;
+    border-left: 3px solid #3a7abead;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #a5d1ff;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+.navbar-custom .navbar-brand, 
+.navbar-custom .nav-link, 
+.navbar-custom .form-control {
+    color: black;
+    font-size: 1.2rem;
+}
+.icon-btn {
+    border: none;
+    background: none;
+    color: #224d7a;
+    font-size: 1.5rem;
+}
+.icon-btn:hover {
+    color: #adb5bd;
+}
+
+.name-display {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.box {
+    padding: 20px;
+    text-align: center;
+}
+
+.left-box {
+    width: 15%; 
+    margin: 0 0 0 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-box img {
+    width: 100%;
+    height: auto; 
+}
+
+.right-box {
+    width: 85%; 
+    text-align: left;
+    margin: 0;
+}
+
+#main-content-links {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#main-content-links a {
+    margin-left: 45px;
+}
+
+.second-nav {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(239, 239, 239);
+}
+
+.profile-icon {
+    width: 40px;           /* Matches Bootstrap icon size */
+    height: 40px;          /* Matches Bootstrap icon size */
+    border-radius: 50%;      /* Make it circular */
+    object-fit: cover;       /* Ensure it crops nicely if not a perfect square */
+    vertical-align: middle;  /* Align it vertically like the icon */
+}
+
+.default-icon {
+    font-size: 35px;
+    margin-right: 10px;  /* Space between icon and name */
+}
+
+.modal-dialog {
+    position: fixed;
+    margin: 0; /* Remove default margin */
+    width: 320px;
+    height: 100%;
+    right: -320px; /* Start off the screen */
+    transition: right 0.3s ease; /* Smooth transition */
+}
+.modal.show .modal-dialog {
+    right: 0; /* Move into view */
+}
+.modal-content {
+    height: 100%;
+}
+
+#itemInfoModal {
+    width: 50%;
+    height: 100%; /* Full height */
+    transition: transform 0.3s ease; /* Smooth opening animation */
+}
+
+/* Add padding to the "Show [10] entries" element */
+.dataTables_length {
+    padding: 0 0 20px 20px;
+}
+
+/* Add padding to the search bar and increase its width */
+.dataTables_filter {
+    padding-right: 20px;
+}
+
+.dataTables_filter input {
+    width: 400px; /* Adjust the width of the search input */
+}
+
+/* Add padding to the "Showing 1 to X of X entries" element */
+.dataTables_info {
+    padding-left: 20px;
+}
+
+/* Add padding to the pagination controls */
+.dataTables_paginate {
+    padding-right: 20px;
+}
